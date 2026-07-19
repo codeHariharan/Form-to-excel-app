@@ -5,7 +5,7 @@
 ![Node.js](https://img.shields.io/badge/Node.js-18+-green?logo=node.js)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript)
 ![HTML5](https://img.shields.io/badge/HTML5-Frontend-orange?logo=html5)
-![License](https://img.shields.io/badge/License-MIT-blue)
+
 
 ---
 
@@ -159,27 +159,7 @@ Each form submission is stored with the following columns:
 | John | john@gmail.com | B.Tech |
 | Hari | hari@gmail.com | CSE |
 
----
 
-## 📷 Screenshots
-
-### Admission Form
-
-> *(Add screenshot here)*
-
-```
-screenshots/form.png
-```
-
-### Excel Output
-
-> *(Add screenshot here)*
-
-```
-screenshots/excel-output.png
-```
-
----
 
 ## 🔧 API Endpoint
 
@@ -211,19 +191,7 @@ screenshots/excel-output.png
 
 ---
 
-## 💡 Future Improvements
 
-- Express.js integration
-- Bootstrap or Tailwind UI
-- Excel download button
-- Search records
-- Edit/Delete entries
-- Authentication
-- CSV Export
-- MongoDB/MySQL support
-- Docker deployment
-
----
 
 ## 🎯 Learning Outcomes
 
@@ -273,7 +241,7 @@ git push origin feature-name
 **Hariharan M**
 
 - GitHub: https://github.com/codeHariharan
-- LinkedIn: https://www.linkedin.com/in/hariharan-m
+- LinkedIn:https://www.linkedin.com/in/hariharan-m-a2b0a527b/
 
 ---
 
@@ -281,8 +249,4 @@ git push origin feature-name
 
 If you found this project useful, consider giving it a ⭐ on GitHub!
 
----
 
-## 📄 License
-
-This project is licensed under the MIT License.
