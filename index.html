@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admission Form</title>
+</head>
+<body>
+  <h2>Admission Form (Test)</h2>
+  <form id="admissionForm">
+  <label>Name: <input type="text" name="name" required /></label><br><br>
+  <label>Email: <input type="email" name="email" required /></label><br><br>
+  <label>Course: <input type="text" name="course" required /></label><br><br>
+  <button type="submit" id="submitBtn">Submit</button>
+</form>
+
+
+<div id="toast" style="
+    display:none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    z-index: 1000;
+">
+  <span id="toastMsg"></span>
+  <button id="closeToast" style="
+      background:none;
+      border:none;
+      color:white;
+      font-weight:bold;
+      margin-left: 15px;
+      cursor:pointer;
+  ">X</button>
+</div>
+
+<script>
+const form = document.getElementById('admissionForm');
+const submitBtn = document.getElementById('submitBtn');
+const toast = document.getElementById('toast');
+const toastMsg = document.getElementById('toastMsg');
+const closeToast = document.getElementById('closeToast');
+
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (submitBtn.disabled) return;
+  submitBtn.disabled = true;
+
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+
+  try {
+    const res = await fetch('http://localhost:3000/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+
+    if (!res.ok) throw new Error('Server error');
+
+    const result = await res.json();
+
+   
+    toastMsg.textContent = result.message;
+    toast.style.display = 'block';
+
+    
+    form.reset();
+   
+
+  } catch (err) {
+    toastMsg.textContent = 'Something went wrong!';
+    toast.style.backgroundColor = '#f44336'; 
+    toast.style.display = 'block';
+  } 
+});
+
+
+</script>
+
+
+</body>
+</html>
